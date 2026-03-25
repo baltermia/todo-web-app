@@ -1,0 +1,24 @@
+{
+  "runtime": "Net100",
+  "documentGenerator": {
+    "fromDocument": {
+      "url": "../wwwroot/openapi/v1.json"
+    }
+  },
+  "codeGenerators": {
+    "openApiToTypeScriptClient": {
+      "className": "{controller}Client",
+      "template": "Angular",
+      "output": "src/app/web-api-client.ts",
+      "httpClass": "HttpClient",
+      "injectionTokenType": "InjectionToken"
+    }
+  },
+  "generatorSettings": {
+    "operationGenerationMode": "MultipleClientsFromOperationId",
+    "generateClientInterfaces": true,
+    "injectHttpClient": true,
+    "generateDtoTypes": true
+  }
+}
+
