@@ -1,3 +1,5 @@
+using Scalar.AspNetCore;
+
 namespace Api;
 
 public class Program
@@ -22,6 +24,7 @@ public class Program
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
+            app.MapScalarApiReference();
         }
 
         app.UseHttpsRedirection();
