@@ -1,7 +1,12 @@
 IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
 
-var api = builder.AddProject<Projects.Api>("api")
-    .WithExternalHttpEndpoints();
+IResourceBuilder<ProjectResource> api = builder.AddProject<Projects.Api>("api")
+    .WithExternalHttpEndpoints()
+    .WithUrlForEndpoint("http", url =>
+    {
+        url.DisplayText = "Scalar API Reference";
+        url.Url = "/scalar";
+    });
 
 if (builder.ExecutionContext.IsRunMode)
 {
